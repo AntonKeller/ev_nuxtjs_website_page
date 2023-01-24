@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Главная страница</h1>
+    <h1 class="text-3xl font-bold underline">Главная страница</h1>
     <NuxtLink to="/services">Услуги</NuxtLink>
     <NuxtLink to="/experience">Опыт компании</NuxtLink>
     <NuxtLink to="/about">О нас</NuxtLink>
