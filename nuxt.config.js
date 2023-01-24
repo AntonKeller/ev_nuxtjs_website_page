@@ -6,7 +6,7 @@ export default {
   head: {
     title: 'ev_nuxt_js_website',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ru'
     },
     meta: [
       { charset: 'utf-8' },
