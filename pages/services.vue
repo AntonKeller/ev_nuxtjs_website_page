@@ -1,0 +1,15 @@
+<template>
+  <div>
+    Услуги
+  </div>
+</template>
+
+<script>
+export default {
+  name: "services"
+}
+</script>
+
+<style scoped>
+
+</style>
