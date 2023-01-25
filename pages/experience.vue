@@ -1,12 +1,17 @@
 <template>
   <div>
-    Опыт компании
+    <experienceHeader />
   </div>
 </template>
 
 <script>
+import evHeader from "../components/ev-header.vue"
+
 export default {
-  name: "experience"
+  name: "experience",
+  components: {
+    'experienceHeader': evHeader,
+  },
 }
 </script>
 

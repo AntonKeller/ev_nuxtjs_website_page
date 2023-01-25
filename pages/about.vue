@@ -1,12 +1,17 @@
 <template>
   <div>
-    О нас
+    <aboutHeader />
   </div>
 </template>
 
 <script>
+import evHeader from "../components/ev-header.vue"
+
 export default {
-  name: "about"
+  name: "about",
+  components: {
+    'aboutHeader': evHeader,
+  },
 }
 </script>
 

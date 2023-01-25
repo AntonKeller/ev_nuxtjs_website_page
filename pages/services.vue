@@ -1,12 +1,17 @@
 <template>
   <div>
-    Услуги
+    <servicesHeader />
   </div>
 </template>
 
 <script>
+import evHeader from "../components/ev-header.vue"
+
 export default {
-  name: "services"
+  name: "services",
+  components: {
+    'servicesHeader': evHeader,
+  },
 }
 </script>
 
