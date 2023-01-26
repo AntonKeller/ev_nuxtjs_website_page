@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import evHeader from "../components/ev-header.vue"
+import evHeader from "../../components/widgets/ev-header.vue"
 
 export default {
   name: "about",
