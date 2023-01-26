@@ -2,11 +2,20 @@
   <div class="relative">
     <evHeader/>
 
-    <div>
-      <video class="brightness-50 relative hidden top-0 md:block w-full p-0 m-0" autoplay muted loop
-             src="https://wedistill.io/uploads/videos/processed/33/Cold2520Winter2520Dream-HD3_1.mp4.mp4">
-      </video>
+    <video class="brightness-50 relative hidden top-0 md:block w-full p-0 m-0" autoplay muted loop
+           src="https://wedistill.io/uploads/videos/processed/33/Cold2520Winter2520Dream-HD3_1.mp4.mp4">
+    </video>
+
+    <div class="hidden md:block absolute left-16 md:top-40 lg:top-48 text-gray-50 w-96 transition-all ease-out">
+      <h1 class="inline-block pb-2.5 w-auto text-3xl mb-4 border-b-2 border-b-red-700">Наш рейтинг:</h1>
+      <h1 class="text-xl mb-4">
+        Наши специалисты успешно осуществили и завершили проекты для более чем 50 компаний из рейтинга «Крупнейшие
+        компании России».
+      </h1>
+      <div class="w-40 hover:bg-red-800 transition-all ease-out text-center inline-block p-2 bg-red-700 rounded-lg cursor-pointer">Рейтинг Эксперт-400</div>
+      <div class="w-24 hover:bg-gray-300 transition-all ease-out text-center inline-block p-2 bg-gray-100 text-red-700 rounded-lg cursor-pointer">О нас</div>
     </div>
+
 
     <div class="relative text-justify pr-2 pl-2 sm:pr-4 sm:pl-4 md:pr-6 md:pl-6 lg:pr-16 lg:pl-16 mt-4 ь">
       <p>
@@ -80,14 +89,16 @@ export default Vue.extend({
   components: {
     'evHeader': evHeader,
   },
-  data: {
-    isActive: true,
+  data() {
+    return {
+      isActive: true,
+    }
   },
 })
 </script>
 
 <style>
-  * {
-    font-family: 'Oswald', "Times New Roman", sans-serif;
-  }
+* {
+  font-family: 'Oswald', "Times New Roman", sans-serif;
+}
 </style>
