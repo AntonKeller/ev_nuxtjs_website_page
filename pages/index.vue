@@ -14,8 +14,7 @@
         Наш рейтинг:
       </div>
       <div class="md:text-md lg:text-xl md:mb-2 lg:mb-4">
-        Наши специалисты успешно осуществили и завершили проекты для более чем 50 компаний из рейтинга «Крупнейшие
-        компании России».
+        Наши специалисты успешно осуществили и завершили проекты для более чем 50 компаний из рейтинга «Крупнейшие компании России».
       </div>
       <div
         class="md:w-36 lg:w-40 md:text-md lg:text-lg hover:bg-red-800 transition-all ease-out text-center inline-block p-2 bg-red-700 rounded-lg cursor-pointer">
