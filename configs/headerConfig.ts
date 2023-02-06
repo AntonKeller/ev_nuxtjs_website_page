@@ -1,9 +1,4 @@
-type link = {
-  title: string,
-  description: string,
-  url: string
-}
-
+import {link} from "~/utils/types";
 
 export const links: Array<link> = [
   {
