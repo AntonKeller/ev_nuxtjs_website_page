@@ -13,14 +13,15 @@
            src="../../assets/images/logotype.png" alt="">
     </NuxtLink>
 
-    <div class="hidden sm:flex items-center">
+    <div class="hidden sm:flex items-center" @mouseover="menuVisibleHandler">
       <nav class="flex items-center">
         <ul class="flex text-gray-300">
           <li
             class="hover:text-gray-400 ml-10 lg:ml-14 flex items-center transition-all ease-out cursor-pointer"
             v-for="link of links">
             <div class="hidden md:block -rotate-90 text-center w-5 h-5"> <</div>
-            <NuxtLink class="ml-4 md:pb-2.5" :to=link.url>
+            <NuxtLink class="ml-4 md:pb-2.5"
+                      :to=link.url>
               <h5 class="sm:text-md lg:text-lg ">{{ link.title }}</h5>
               <p class="hidden md:block sm:text-xs lg:text-xs">{{ link.description }}</p>
             </NuxtLink>
@@ -60,14 +61,23 @@ import {links} from '@/configs/headerConfig';
 
 export default {
   name: "ev-header",
+
   props: {
     textColor: String,
+    menuIsVisible: Boolean
   },
+
   data() {
     return {
-      links
+      links,
     }
   },
+
+  methods: {
+    menuVisibleHandler() {
+      this.$emit('menuVisibleHandler');
+    }
+  }
 
 }
 </script>
