@@ -52,7 +52,7 @@
   </div>
 </template>
 
-<script lang="ts">
+<script >
 import Vue from 'vue'
 import evHeader from "@/components/widgets/ev-header.vue"
 
