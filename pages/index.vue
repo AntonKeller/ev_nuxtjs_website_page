@@ -54,7 +54,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import evHeader from "../components/widgets/ev-header.vue"
+import evHeader from "@/components/widgets/ev-header.vue"
 
 export default Vue.extend({
   name: 'IndexPage',
