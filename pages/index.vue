@@ -1,8 +1,6 @@
 <template>
   <div class="relative">
 
-    <evHeader @menuVisibleHandler="visibleHandler"/>
-
     <video @mouseover="menuIsVisible=false" class="brightness-50 relative hidden top-0 md:block w-full p-0 m-0" autoplay muted loop
            src="https://wedistill.io/uploads/videos/processed/33/Cold2520Winter2520Dream-HD3_1.mp4.mp4">
     </video>

@@ -1,16 +1,18 @@
 <template>
   <div>
-    page about
+    <evHeader/>
+    <Nuxt/>
   </div>
 </template>
 
 <script>
 import evHeader from "@/components/widgets/ev-header.vue"
+import Nuxt from "vue"
 
 export default {
-  name: "about",
+  name: "default",
   components: {
-    'aboutHeader': evHeader,
+    'evHeader': evHeader,
   },
 }
 </script>

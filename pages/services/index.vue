@@ -1,6 +1,6 @@
 <template>
   <div>
-    <servicesHeader />
+    page services
   </div>
 </template>
 
