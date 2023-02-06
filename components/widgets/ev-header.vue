@@ -57,6 +57,8 @@
 </template>
 
 <script>
+import {links} from '@/configs/headerConfig';
+
 export default {
   name: "ev-header",
   props: {
@@ -64,23 +66,7 @@ export default {
   },
   data() {
     return {
-      links: [
-        {
-          title: "Услуги",
-          description: "множество услуг",
-          url: "/services"
-        },
-        {
-          title: "Опыт компании",
-          description: "лидер оценки",
-          url: "/experience"
-        },
-        {
-          title: "О нас",
-          description: "Юридическая информация",
-          url: "/about"
-        },
-      ],
+      links
     }
   },
 
