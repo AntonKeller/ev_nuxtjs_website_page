@@ -4,17 +4,18 @@ export const links: Array<link> = [
   {
     title: "Услуги",
     description: "множество услуг",
-    url: "/services"
+    url: "/services",
   },
   {
-    title: "Опыт компании",
+    title: "Опыт",
     description: "лидер оценки",
-    url: "/experience"
+    url: "/experience",
   },
   {
-    title: "О нас",
-    description: "Юридическая информация",
-    url: "/about"
+    title: "Рейтинги",
+    description: "достижения компании",
+    url: "/rating",
+    transition: "home"
   },
 ];
 
