@@ -1,7 +1,7 @@
 <template>
-  <div class="relative">
+  <div class="absolute left-0 right-0 top-0 bottom-0">
 
-    <video @mouseover="menuIsVisible=false" class="brightness-50 relative hidden top-0 md:block w-full p-0 m-0" autoplay muted loop
+    <video @mouseover="menuIsVisible=false" class="fixed top-0 left-0 object-cover w-full h-screen brightness-50 hidden md:block p-0 m-0" autoplay muted loop
            src="https://wedistill.io/uploads/videos/processed/33/Cold2520Winter2520Dream-HD3_1.mp4.mp4">
     </video>
 
@@ -46,6 +46,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
