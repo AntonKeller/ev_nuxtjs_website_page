@@ -1,7 +1,9 @@
 <template>
   <div>
     <evHeader/>
-    <Nuxt/>
+    <transition name="home">
+      <Nuxt/>
+    </transition>
   </div>
 </template>
 
@@ -18,6 +20,11 @@ export default {
 </script>
 
 <style scoped>
-.home-enter-active, .home-leave-active { transition: opacity .5s; }
-.home-enter, .home-leave-active { opacity: 0; }
+.home-enter-active, .home-leave-active {
+  transition: opacity .3s;
+}
+.home-enter, .home-leave-active {
+  transform: translateX(100%);
+  opacity: 0;
+}
 </style>

@@ -3,7 +3,7 @@
   <header
     class="overflow-hidden bg-transparent top-0 w-full flex items-center justify-between sm:justify-between md:justify-between p-1 sm:p-4 md:pl-11 md:pr-11 z-10 backdrop-blur-sm transition-all border-b border-b-gray-600 text-black md:absolute md:text-red-50">
 
-    <NuxtLink class="mr-auto ml-1 sm:ml-5 flex justify-center items-center" to="/">
+    <NuxtLink class="move mr-auto ml-1 sm:ml-5 flex justify-center items-center" to="/">
       <img class="select-none w-15 h-8 sm:w-20 sm:h-11 md:w-24 md:h-14"
            src="@/assets/images/logotype-white.png" alt="">
     </NuxtLink>
@@ -88,4 +88,34 @@ header {
   /*background-size: cover;*/
   /*background-position: center;*/
 }
+
+/*@keyframes move {*/
+/*  from {*/
+/*    margin-left: 0;*/
+/*  }*/
+/*  25% {*/
+/*    transform: translateX(-1px);*/
+/*    transform: translateY(-1px);*/
+/*  }*/
+/*  50% {*/
+/*    transform: translateX(-1px);*/
+/*    transform: translateY(1px);*/
+/*  }*/
+/*  75% { */
+/*    transform: translateX(1px);*/
+/*    transform: translateY(1px);*/
+/*  }*/
+/*  100% {*/
+/*    transform: translateX(1px);*/
+/*    transform: translateY(-1px);*/
+/*  }*/
+/*}*/
+
+/*.move {*/
+/*  animation-direction: alternate;*/
+/*  animation-duration: 2s;*/
+/*  animation-name: move;*/
+/*  animation-iteration-count: infinite;*/
+/*  animation-timing-function: linear;*/
+/*}*/
 </style>
