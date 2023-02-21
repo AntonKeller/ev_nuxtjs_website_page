@@ -1,8 +1,29 @@
-export interface link {
+import {serviceTabContent} from "~/configs/servicesConfig";
+
+interface TContentObject {
+  title: String,
+  textContent: Array<String>,
+  enums: Array<String>,
+  gridEnums?: String[][],
+  underline: Boolean
+}
+
+export interface TTab {
+  id: Number,
+  title: String,
+  sub: Boolean,
+}
+
+export interface TTabContent {
+  id: (Number | null),
+  content: Array<TContentObject>
+}
+
+export interface Tlink {
+  id: Number,
   title: string,
   description: string,
   url: string,
-  transition?: string
 }
 
 export interface ratingButton {
