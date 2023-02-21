@@ -8,8 +8,8 @@
 </template>
 
 <script>
+
 import evHeader from "@/components/widgets/ev-header.vue"
-import Nuxt from "vue"
 
 export default {
   name: "default",
