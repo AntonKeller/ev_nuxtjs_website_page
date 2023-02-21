@@ -1,46 +1,52 @@
 <template>
-  <div class="absolute top-0 left-0 right-0 bg-gray-900 pt-28 h-full flex justify-center back">
+  <div class="min-h-screen bg-gray-900 pt-28 back">
+    <div class="pl-4 pr-4 md:pl-12 md:pr-12 lg:pl-32 lg:pr-32 xl:pl-56 xl:pr-56 w-auto flex flex-col items-center backdrop-blur-lg overflow-hidden backdrop-brightness-90">
 
-    <div class="p-4 w-auto flex flex-col items-center backdrop-blur-lg overflow-hidden backdrop-brightness-75">
 
-      <!--buttons-->
-      <div class="text-center flex justify-center flex-wrap buttonAnimate">
+      <div class="w-full flex overflow-x-scroll md:overflow-auto md:flex-wrap md:w-full md:justify-center buttonAnimate backdrop-blur-sm pb-8">
         <div
-          v-for="ratingButton of ratingButtons"
-          @click="setActiveButtonYear(ratingButton.year)"
-          :class="{'bg-red-800 ease-out':activeButtonYear !== ratingButton.year}"
-          class="transition-all cursor-pointer hover:bg-transparent active:scale-95 border-2 border-red-800  text-gray-200 flex w-full sm:w-auto flex justify-center items-center rounded-sm mt-2 pt-2 pb-2 pl-6 pr-8 first:ml-0 ml-0 sm:ml-3">
-          <span class="-rotate-90 select-none"><</span>
-          <h3 class="ml-5">{{ ratingButton.title }}</h3>
+          v-for="element of rating"
+          @click="setActiveButtonYear(element.year)"
+          :class="{'bg-red-800 ease-out ': activeButtonYear !== element.year}"
+          class="flex justify-center items-center transition-all cursor-pointer hover:bg-transparent border-2 h-12 border-red-800 text-gray-300 rounded-sm  pt-3 pb-3 pl-6 pr-6 ml-4 md:mb-4 first:ml-0">
+          <span class="select-none duration-150 ease-in transition-all" :class="{'-rotate-90': activeButtonYear === element.year}"><</span>
+          <h3 class="ml-5">{{ element.year }}</h3>
         </div>
       </div>
 
-      <div
-        v-for="ratingDescription of ratingDescriptions"
-        :class="{'hidden':activeButtonYear !== ratingDescription.year}"
-        class="w-full mt-20 text-gray-200 ">
+      <p class="text-gray-300 text-lg text-justify">
+        Наши специалисты успешно осуществили и завершили проекты для 45 компаний из рейтинга «Крупнейшие компании России» (рейтинг Эксперт-400),
+        совокупная выручка которых за 2008 год превысила 9.3 трлн. руб. Основным деловым преимуществом нашей компании является высокий профессионализм
+        сотрудников, а также опыт выполнения проектов в сфере оценки и консалтинга с последующим согласованием результатов с крупнейшими международными
+        аудиторскими компаниями. Специалисты Компании Everest Consulting являются членами таких профессиональных организаций, как Саморегулируемая
+        Межрегиональная Ассоциация Оценщиков (СМАО),  Восточно-Европейский союз экспертов (OSV), а также получили квалификации Американского общества оценщиков (ASA).
+      </p>
 
-        <div class="ratingShowAnimate" v-for="key of ratingDescription.keys">
-          <div class="flex flex-col w-full">
-            <div class="flex flex-row mt-6">
-              <div class="rounded-sm w-4/6 bg-red-800 h-8 flex items-center p-4">{{ key.title }}</div>
-              <div class="rounded-sm w-12 bg-red-800 h-8 ml-4 flex justify-center items-center p-4">
+      <div
+        v-for="element of rating"
+        :class="{'hidden':activeButtonYear !== element.year}"
+        class="overflow-y-scroll md:overflow-auto w-full md:mt-10 lg:mt-12 text-gray-300 text-lg">
+        <div v-for="key of element.keys" class="ratingShowAnimate">
+            <div class="flex flex-col md:flex-row mt-4 items-center">
+              <div class="rounded-sm bg-gray-800 w-full md:max-h-10 flex text-center md:text-left justify-center md:justify-start items-center p-3 md:p-6">
+                {{ key.title }}
+              </div>
+
+              <div class="rounded-sm bg-red-800 w-full md:w-16 h-4 md:max-h-12 md:ml-3 flex justify-center items-center p-4 md:p-6">
                 {{ key.value || "-" }}
               </div>
             </div>
-          </div>
         </div>
-
       </div>
 
-    </div>
 
+    </div>
   </div>
 </template>
 
 <script>
 import evHeader from "@/components/widgets/ev-header.vue"
-import {ratingButtons, ratingDescriptions} from "@/configs/ratingConfig.ts"
+import {rating} from "@/configs/ratingConfig.ts"
 
 export default {
   name: "rating",
@@ -50,9 +56,9 @@ export default {
 
   data() {
     return {
-      ratingButtons,
-      ratingDescriptions,
+      rating,
       activeButtonYear: Number,
+      isActiveMenu: true
     }
   },
 
@@ -71,48 +77,42 @@ export default {
 <style scoped>
 
 .back {
-  background-image: url("@/assets/fones/f-7.png");
+  background-image: url("@/assets/background/b-2.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .ratingShowAnimate {
-  animation-name: moveRating;
-  animation-duration: 1.2s;
+  animation-name: moveRating-1;
+  animation-duration: 800ms;
   transition: ease-out;
 }
 
-@keyframes moveRating {
+@keyframes moveRating-1 {
   from {
-    opacity: 1;
-    width: 100%;
-  }
-  50% {
     opacity: 0;
-    width: 0;
-    font-size: 1px;
+    transform: translateX(50px);
   }
   to {
     opacity: 1;
-    width: 100%;
+    transform: translateX(0);
   }
 }
 
 .buttonAnimate {
-  animation-name: moveButton;
-  animation-duration: 1s;
+  animation-name: moveButton-1;
+  animation-duration: 900ms;
+  transition: ease-out;
 }
 
-
-@keyframes moveButton {
+@keyframes moveButton-1 {
   from {
     opacity: 0;
-    transform: translateY(-100%);
+    transform: translateX(-15px) translateY(-15px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
