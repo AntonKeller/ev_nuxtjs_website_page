@@ -1,4 +1,7 @@
 export default {
+
+  // target: 'static',
+
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -24,6 +27,14 @@ export default {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap",
       },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap",
+      },
+{
+  rel: "stylesheet",
+    href: "https://fonts.cdnfonts.com/css/sf-pro-display",
+},
     ]
   },
 
