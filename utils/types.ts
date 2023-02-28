@@ -1,5 +1,3 @@
-import {serviceTabContent} from "~/configs/servicesConfig";
-
 interface TContentObject {
   title: String,
   textContent: Array<String>,
