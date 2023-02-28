@@ -1,26 +1,51 @@
 <template>
-  <div class="flex flex-row h-screen  pl-2 sm:pl-4 md:pl-6 lg:pl-8 xl:pl-10 back">
+  <div
+    class="flex flex-col md:flex-row justify-start md:justify-center items-center md:items-start h-screen md:pl-6 lg:pl-8 xl:pl-10 background">
 
-    <div class="h-screen w-4/12 flex flex-col justify-center items-start border-r border-r-gray-600">
+    <div class="hidden w-4/12 md:flex flex-col justify-center items-start border-r border-r-gray-600 md:pt-32">
       <ul class="w-full flex flex-col justify-center items-start">
         <li
           v-for="tab of serviceTabs"
           @click="activeTab=tab.id"
-          :class="{'uppercase mt-4':tab.sub, 'pl-10':!tab.sub}"
-          class="hover:text-red-700 cursor-pointer z-30 show-left font-bold text-lg lg:text-xl mb-4 text-gray-300 text-center w-full transition-colors duration-150">
+          :class="{'uppercase mt-4':tab.sub, 'md:pl-10':!tab.sub}"
+          class="hover:text-red-700 cursor-pointer show-left font-bold text-lg lg:text-xl mb-4 text-gray-300 text-center w-full transition-colors duration-150">
           {{ tab.title }}
           <div v-if="tab.id === 8" class="w-full gray-line"></div>
         </li>
       </ul>
     </div>
 
+
+    <div
+      class="md:hidden w-full flex flex-col justify-start text-gray-300 text-lg text-center p-6 pl-4 pr-4 sm:pl-10 sm:pr-10">
+      <div
+        @click="dropMenuIsOpen=!dropMenuIsOpen"
+        class="border border-gray-600 w-full rounded-lg flex flex-row justify-between p-2 pl-4 pr-4">
+        <div>Услуги</div>
+        <div :class="{'-rotate-90': dropMenuIsOpen}" class="duration-150"><</div>
+      </div>
+      <div
+        v-if="dropMenuIsOpen"
+        class="rounded-lg border-t border-t-gray-900 border-l border-r border-b border-l-gray-600 border-b-gray-600 border-r-gray-600  pl-4 pr-4">
+        <ul class="w-full flex flex-col justify-center items-start">
+          <li
+            v-for="tab of serviceTabs"
+            @click="serviceSelect(tab.id)"
+            :class="{'uppercase mt-4':tab.sub, 'pl-10':!tab.sub}"
+            class="cursor-pointer show-left font-bold text-base mb-4 text-gray-300 text-center w-full transition-colors">
+            {{ tab.title }}
+            <div v-if="tab.id === 8" class="w-full border-b border-b-gray-600"></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <div
       v-for="currentTab of serviceTabContent"
       v-if="activeTab===currentTab.id"
-      class="overflow-y-scroll overflow-x-hidden w-8/12 pl-2 pr-2 sm:pl-10 sm:pr-10 md:pl-18 md:pr-18 lg:pl-24 lg:pr-24 xl:pl-28 xl:pr-28 pt-24 h-screen flex flex-col justify-start items-start">
+      class="w-full md:w-8/12 pl-5 pr-5 sm:pl-11 sm:pr-11 md:pl-18 md:pr-18 lg:pl-24 lg:pr-24 xl:pl-28 xl:pr-28 md:pt-32 flex flex-col justify-start items-start">
 
-      <div v-for="content of currentTab.content" class="flex flex-col justify-start items-start mt-12 max-w-full">
-
+      <div v-for="content of currentTab.content" class="pb-10 flex flex-col justify-start items-start md:max-w-full">
         <h4 v-if="content.title.length" class="show-left font-bold text-2xl mb-4 text-gray-300 text-center mb-4">
           {{ content.title }}
         </h4>
@@ -42,6 +67,8 @@
     </div>
 
   </div>
+
+
 </template>
 
 <script>
@@ -53,12 +80,18 @@ export default {
 
   components: {},
 
-  methods: {},
+  methods: {
+    serviceSelect(id) {
+      this.activeTab = id;
+      this.dropMenuIsOpen = false;
+    }
+  },
 
   data() {
     return {
+      dropMenuIsOpen: false,
       hoverTab: 0,
-      activeTab: 0,
+      activeTab: 2,
       serviceTabContent,
       serviceTabs
     }
@@ -72,19 +105,12 @@ export default {
   width: 0;
 }
 
-.back {
-  background-image: url("@/assets/background/f-10.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.background {
+  background: url("@/assets/background/background-opacity-25-35.png") transparent no-repeat center / cover;
 }
 
 .red-line, .gray-line {
   min-height: 2px;
-}
-
-.gray-line-heavy {
-  background: linear-gradient(to right, rgba(75, 85, 99, 0.5), rgb(99, 112, 129), rgba(75, 85, 99, 0.5));
 }
 
 .red-line-heavy {
@@ -100,9 +126,7 @@ export default {
 }
 
 h1, h2, h3, h4, h5, li, p {
-  animation-duration: .75s;
-  animation-name: showFast;
-  animation-timing-function: ease-in-out;
+  animation: showFast ease 0.7s;
   text-align: left;
 }
 
@@ -110,10 +134,6 @@ h1, h2, h3, h4, h5, li, p {
   from {
     opacity: 0;
     transform: translateX(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
   }
 }
 
